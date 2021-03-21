@@ -2,10 +2,12 @@
 
 namespace YARPG.Core
 {
-    public class Hero
+    public class Entity
     {
         public int MaxHealth { get; set; }
-        public int CurrentHealth {
+
+        public int CurrentHealth
+        {
             get => _health;
             set
             {
@@ -16,11 +18,19 @@ namespace YARPG.Core
             }
         }
         private int _health;
-        public int Damage { get; set; }
 
-        public Hero()
+        public int Attack { get; set; }
+
+        public Entity() { }
+
+        public virtual bool IsAlive()
         {
+            return CurrentHealth > 0;
+        }
 
+        public virtual void TakeDamage(int damage)
+        {
+            CurrentHealth -= damage;
         }
     }
 }

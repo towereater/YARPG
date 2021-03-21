@@ -7,10 +7,23 @@ namespace YARPG_ConsoleGame
     {
         static void Main(string[] args)
         {
-            Hero h = new Hero();
-            h.MaxHealth = 15;
+            Hero h = new Hero()
+            {
+                Attack = 3,
+                MaxHealth = 15,
+                CurrentHealth = 15
+            };
+            Enemy e = new Enemy()
+            {
+                Attack = 1,
+                MaxHealth = 10,
+                CurrentHealth = 10
+            };
 
-            Console.WriteLine("Hello World! MAXH=" + h.MaxHealth);
+            CombatManager cmbMan = new CombatManager(h, e);
+            cmbMan.Combat();
+
+            Console.WriteLine($"Hero health: {h.CurrentHealth}\nEnemy health: {e.CurrentHealth}");
         }
     }
 }
