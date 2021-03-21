@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "YARPG_ConsoleGame/1.0.0": {
+        "dependencies": {
+          "YARPG.Core": "1.0.0"
+        },
+        "runtime": {
+          "YARPG_ConsoleGame.dll": {}
+        }
+      },
+      "YARPG.Core/1.0.0": {
+        "runtime": {
+          "YARPG.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "YARPG_ConsoleGame/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "YARPG.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

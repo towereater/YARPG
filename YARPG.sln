@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YARPG_ConsoleGame", "YARPG_ConsoleGame\YARPG_ConsoleGame.csproj", "{716966E1-80D9-4249-833A-D3BA9F24B7A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YARPG.Core", "YARPG.Core\YARPG.Core.csproj", "{B9095AE4-7E0F-4BA5-B038-B9226E32C644}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{716966E1-80D9-4249-833A-D3BA9F24B7A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{716966E1-80D9-4249-833A-D3BA9F24B7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{716966E1-80D9-4249-833A-D3BA9F24B7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{716966E1-80D9-4249-833A-D3BA9F24B7A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9095AE4-7E0F-4BA5-B038-B9226E32C644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9095AE4-7E0F-4BA5-B038-B9226E32C644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9095AE4-7E0F-4BA5-B038-B9226E32C644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9095AE4-7E0F-4BA5-B038-B9226E32C644}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D49A579-2DA0-45ED-8D3D-525AAEC2CD79}
+	EndGlobalSection
+EndGlobal

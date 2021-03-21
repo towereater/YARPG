@@ -1,0 +1,12 @@
+C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\bin\Debug\net5.0\YARPG.Core.deps.json
+C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\bin\Debug\net5.0\YARPG.Core.dll
+C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\bin\Debug\net5.0\ref\YARPG.Core.dll
+C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\bin\Debug\net5.0\YARPG.Core.pdb
+C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\obj\Debug\net5.0\YARPG.Core.csprojAssemblyReference.cache
+C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\obj\Debug\net5.0\YARPG.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\obj\Debug\net5.0\YARPG.Core.AssemblyInfoInputs.cache
+C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\obj\Debug\net5.0\YARPG.Core.AssemblyInfo.cs
+C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\obj\Debug\net5.0\YARPG.Core.csproj.CoreCompileInputs.cache
+C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\obj\Debug\net5.0\YARPG.Core.dll
+C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\obj\Debug\net5.0\ref\YARPG.Core.dll
+C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\obj\Debug\net5.0\YARPG.Core.pdb
