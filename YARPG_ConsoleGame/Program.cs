@@ -21,9 +21,16 @@ namespace YARPG_ConsoleGame
             };
 
             CombatManager cmbMan = new CombatManager(h, e);
-            cmbMan.Combat();
+            MessageManager msgMan = cmbMan.MessageManager;
 
-            Console.WriteLine($"Hero health: {h.CurrentHealth}\nEnemy health: {e.CurrentHealth}");
+            msgMan.MessageDelivered += PrintFunction;
+
+            cmbMan.Combat();
+        }
+
+        static void PrintFunction(string msg)
+        {
+            Console.WriteLine(msg);
         }
     }
 }
