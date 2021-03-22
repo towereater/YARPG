@@ -18,9 +18,14 @@ namespace YARPG.Core
         public Enemy Enemy { get; protected set; }
 
         /// <summary>
-        /// Message manager used to deliver messages.
+        /// Message manager used to deliver messages during combat.
         /// </summary>
         public MessageManager MessageManager { get; set; }
+
+        /// <summary>
+        /// Input manager used to ask for actions during combat.
+        /// </summary>
+        public InputManager InputManager { get; set; }
 
         /// <summary>
         /// Defines a new combat scene with a Hero and an Enemy.
@@ -39,6 +44,7 @@ namespace YARPG.Core
             Enemy = enemy;
 
             MessageManager = new MessageManager();
+            InputManager = new InputManager();
         }
 
         /// <summary>
@@ -64,8 +70,19 @@ namespace YARPG.Core
         /// </summary>
         protected void CombatTurn()
         {
-            Enemy.TakeDamage(Hero.Attack);
-            MessageManager.NewMessage($"Enemy took {Hero.Attack} point(s) of damage!");
+            string action;
+
+            do
+            {
+                action = (InputManager.AskForInput() as string).ToLower();
+            } while (action != "l" && action != "h");
+
+            int damage = Hero.Attack;
+            if (action == "h")
+                damage += 2;
+
+            Enemy.TakeDamage(damage);
+            MessageManager.NewMessage($"Enemy took {damage} point(s) of damage!");
 
             if (Enemy.IsAlive)
             {

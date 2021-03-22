@@ -8,9 +8,9 @@ namespace YARPG.Core
     public class MessageManager
     {
         /// <summary>
-        /// Message hold by the manager. If set, triggers an event.
+        /// Message held by the manager. If set, triggers an event.
         /// </summary>
-        string Message
+        public string Message
         {
             get => _message;
             set
@@ -19,7 +19,7 @@ namespace YARPG.Core
                 OnMessageDelivery();
             }
         }
-        string _message;
+        private string _message;
 
         /// <summary>
         /// Event triggered when Message property is set.

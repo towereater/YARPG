@@ -22,8 +22,9 @@ namespace YARPG_ConsoleGame
 
             CombatManager cmbMan = new CombatManager(h, e);
             MessageManager msgMan = cmbMan.MessageManager;
-
             msgMan.MessageDelivered += PrintFunction;
+            InputManager inpMan = cmbMan.InputManager;
+            inpMan.InputRequested += InputFunction;
 
             cmbMan.Combat();
         }
@@ -31,6 +32,12 @@ namespace YARPG_ConsoleGame
         static void PrintFunction(string msg)
         {
             Console.WriteLine(msg);
+        }
+
+        static object InputFunction()
+        {
+            Console.Write("Which attack you want to perform? [L] for light or [H] for heavy: ");
+            return Console.ReadLine();
         }
     }
 }
