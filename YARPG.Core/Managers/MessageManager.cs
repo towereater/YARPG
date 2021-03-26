@@ -5,12 +5,12 @@ namespace YARPG.Core
     /// <summary>
     /// Default class to manage messages delivery.
     /// </summary>
-    public class MessageManager
+    public class MessageManager<T>
     {
         /// <summary>
         /// Message held by the manager. If set, triggers an event.
         /// </summary>
-        public string Message
+        public T Message
         {
             get => _message;
             set
@@ -19,12 +19,12 @@ namespace YARPG.Core
                 OnMessageDelivery();
             }
         }
-        private string _message;
+        private T _message;
 
         /// <summary>
         /// Event triggered when Message property is set.
         /// </summary>
-        public event Action<string> MessageDelivered;
+        public event Action<T> MessageDelivered;
 
         /// <summary>
         /// Default constructor of this class.
@@ -35,7 +35,7 @@ namespace YARPG.Core
         /// Alternative function to set Message property.
         /// </summary>
         /// <param name="message">Message to save.</param>
-        public void NewMessage(string message)
+        public void NewMessage(T message)
         {
             Message = message;
         }
@@ -45,7 +45,9 @@ namespace YARPG.Core
         /// </summary>
         protected void OnMessageDelivery()
         {
-            MessageDelivered?.Invoke(Message);
+            Action<T> handler = MessageDelivered;
+            if (handler != null)
+                handler.Invoke(Message);
         }
     }
 }

@@ -20,12 +20,12 @@ namespace YARPG.Core
         /// <summary>
         /// Message manager used to deliver messages during combat.
         /// </summary>
-        public MessageManager MessageManager { get; set; }
+        public MessageManager<string> MessageManager { get; set; }
 
         /// <summary>
         /// Input manager used to ask for actions during combat.
         /// </summary>
-        public InputManager InputManager { get; set; }
+        public InputManager<string> InputManager { get; set; }
 
         /// <summary>
         /// Defines a new combat scene with a Hero and an Enemy.
@@ -43,8 +43,8 @@ namespace YARPG.Core
             Hero = hero;
             Enemy = enemy;
 
-            MessageManager = new MessageManager();
-            InputManager = new InputManager();
+            MessageManager = new MessageManager<string>();
+            InputManager = new InputManager<string>();
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace YARPG.Core
 
             do
             {
-                action = (InputManager.AskForInput() as string).ToLower();
+                action = InputManager.AskForInput().ToLower();
             } while (action != "l" && action != "h");
 
             int damage = Hero.Attack;

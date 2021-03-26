@@ -5,17 +5,17 @@ namespace YARPG.Core
     /// <summary>
     /// Default class to manage input requests.
     /// </summary>
-    public class InputManager
+    public class InputManager<T>
     {
         /// <summary>
         /// Result of the input.
         /// </summary>
-        public object Result { get; set; }
+        public T Result { get; set; }
 
         /// <summary>
         /// Event triggered when an input is requested.
         /// </summary>
-        public event Func<object> InputRequested;
+        public event Func<T> InputRequested;
 
         /// <summary>
         /// Default constructor of this class.
@@ -25,7 +25,7 @@ namespace YARPG.Core
         /// <summary>
         /// Triggers the InputRequested event and returns the result the associated function.
         /// </summary>
-        public object AskForInput()
+        public T AskForInput()
         {
             OnInputRequested();
             return Result;
@@ -36,7 +36,9 @@ namespace YARPG.Core
         /// </summary>
         protected void OnInputRequested()
         {
-            Result = InputRequested?.Invoke();
+            Func<T> handler = InputRequested;
+            if (handler != null)
+                Result = handler.Invoke();
         }
     }
 }
