@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Unarmed attack",
+    "damage": 2,
+    "description": "Hits the enemy with a punch"
+  },
+  {
+    "name": "Sword strike",
+    "damage": 3,
+    "description": "Hits the enemy with a sword"
+  },
+  {
+    "name": "Fireball",
+    "damage": 5,
+    "description": "Uses magic to create a powerful fire attack"
+  }
+]

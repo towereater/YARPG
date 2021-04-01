@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YARPG_ConsoleGame", "YARPG_ConsoleGame\YARPG_ConsoleGame.csproj", "{716966E1-80D9-4249-833A-D3BA9F24B7A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YARPG_ConsoleGame", "YARPG_ConsoleGame\YARPG_ConsoleGame.csproj", "{716966E1-80D9-4249-833A-D3BA9F24B7A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YARPG.Core", "YARPG.Core\YARPG.Core.csproj", "{B9095AE4-7E0F-4BA5-B038-B9226E32C644}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YARPG.Core", "YARPG.Core\YARPG.Core.csproj", "{B9095AE4-7E0F-4BA5-B038-B9226E32C644}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace YARPG.Core
 {
@@ -7,6 +7,11 @@ namespace YARPG.Core
     /// </summary>
     public class Entity
     {
+        /// <summary>
+        /// Personal name of the entity.
+        /// </summary>
+        public string Name { get; set; }
+
         /// <summary>
         /// Max health of the entity.
         /// </summary>
@@ -33,10 +38,17 @@ namespace YARPG.Core
         /// </summary>
         public virtual bool IsAlive => CurrentHealth > 0;
 
+        /*
         /// <summary>
         /// Attack damage of the entity.
         /// </summary>
         public int Attack { get; set; }
+        */
+
+        /// <summary>
+        /// List of the names of the skills.
+        /// </summary>
+        public List<string> Skills { get; set; }
 
         /// <summary>
         /// Default constructor for this class.

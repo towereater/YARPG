@@ -10,3 +10,7 @@ C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\obj\Debug\net5.0\YARPG.Core.csp
 C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\obj\Debug\net5.0\YARPG.Core.dll
 C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\obj\Debug\net5.0\ref\YARPG.Core.dll
 C:\Users\Andnic-PC\source\repos\YARPG\YARPG.Core\obj\Debug\net5.0\YARPG.Core.pdb
+C:\net5.0\YARPG.Core.deps.json
+C:\net5.0\YARPG.Core.dll
+C:\net5.0\ref\YARPG.Core.dll
+C:\net5.0\YARPG.Core.pdb

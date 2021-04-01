@@ -10,9 +10,6 @@ namespace YARPG.Core
         /// <summary>
         /// Default constructor for this class.
         /// </summary>
-        public Hero()
-        {
-
-        }
+        public Hero() { }
     }
 }
