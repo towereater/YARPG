@@ -26,12 +26,10 @@ namespace YARPG.Core
         private Random _random;
 
         /// <summary>
-        /// Sets up a combat manager with an associated input/output manager.
+        /// Default constructor for this class.
         /// </summary>
-        /// <param name="ioMan">IO manager to used for internal operations.</param>
-        public CombatManager(IOManager ioMan)
+        public CombatManager()
         {
-            IOManager = ioMan;
             _random = new Random(DateTime.Now.Millisecond);
         }
 
@@ -39,7 +37,7 @@ namespace YARPG.Core
         /// Sets up the hero and the enemy of the combat.
         /// Error if any of the arguments is not initialized.
         /// </summary>
-        public void Initialize(Hero hero, Enemy enemy)
+        public CombatManager InitializeCombat(Hero hero, Enemy enemy)
         {
             // Checks arguments validity
             if (hero == null)
@@ -49,6 +47,15 @@ namespace YARPG.Core
 
             Hero = hero;
             Enemy = enemy;
+
+            return this;
+        }
+
+        public CombatManager SetIOManager(IOManager ioMan)
+        {
+            IOManager = ioMan;
+
+            return this;
         }
 
         /// <summary>
@@ -134,7 +141,7 @@ namespace YARPG.Core
                     continue;
                 }
 
-                IOManager.PushOutput($"{i}. {skill.Name}, Damage: {skill.Damage}, {skill.Description}");
+                IOManager.PushOutput($"{i}. {skill.Name}, Damage: {skill.Damage}");
             }
         }
     }

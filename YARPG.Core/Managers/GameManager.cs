@@ -23,28 +23,36 @@ namespace YARPG.Core
         public CombatManager CombatManager { get; protected set; }
 
         /// <summary>
-        /// Initializes the current game specifing the hero's name and the skill file path.
+        /// Default constructor for this class.
         /// </summary>
-        /// <param name="heroName">Name of the hero.</param>
-        /// <param name="skillFilePath">Path of the file containing the skills.</param>
-        public GameManager(string heroName, string skillFilePath = "")
+        public GameManager()
         {
-            // Complete initialization of the managers
-            SkillService.Initialize(skillFilePath);
-            IOManager = new ConsoleManager(this);
-            CombatManager = new CombatManager(IOManager);
+            CombatManager = new CombatManager();
+        }
 
-            // Default hero created for the game
-            Hero = new Hero() {
-                Name = heroName,
-                MaxHealth = 15,
-                CurrentHealth = 15,
-                Skills = new List<string>()
-                {
-                    "Unarmed attack",
-                    "Fireball"
-                }
-            };
+        /// <summary>
+        /// Sets the Hero instance associated to the game.
+        /// </summary>
+        /// <param name="h">Hero instance to use in the game.</param>
+        /// <returns>Returns the GameManager instance.</returns>
+        public GameManager InitializeHero(Hero h)
+        {
+            Hero = h;
+
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the IOManager instance associated to the game.
+        /// </summary>
+        /// <param name="ioMan">IOManager instance to use in the game.</param>
+        /// <returns>Returns the GameManager instance.</returns>
+        public GameManager SetIOManager(IOManager ioMan)
+        {
+            IOManager = ioMan;
+            CombatManager.SetIOManager(ioMan);
+
+            return this;
         }
 
         /// <summary>
@@ -65,7 +73,7 @@ namespace YARPG.Core
             };
 
             // Sets up the combat and starts it
-            CombatManager.Initialize(Hero, e);
+            CombatManager.InitializeCombat(Hero, e);
             CombatManager.Combat();
         }
     }
