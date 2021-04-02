@@ -35,7 +35,7 @@ namespace YARPG.Core
             logBuffer = new List<string>();
 
             // Reads from the specified file the GUI model
-            using (StreamReader sr = new StreamReader("C:/Users/Andnic-PC/source/repos/YARPG/YARPG.Core/Environments/ConsoleGUI.txt"))
+            using (StreamReader sr = new StreamReader(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "..", "YARPG.Core", "Environments", "ConsoleGUI.txt")))
                 GUIModel = sr.ReadToEnd();
         }
 

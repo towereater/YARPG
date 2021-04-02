@@ -12,14 +12,20 @@ namespace YARPG.Core
         /// Reads data from a JSON file and converts it to a given type.
         /// </summary>
         /// <typeparam name="T">Type to convert data to.</typeparam>
-        /// <param name="filePath">Path of the file to read.</param>
+        /// <param name="fileName">Path of the file to read.</param>
         /// <returns>Returns the data read from file converted to the chosen type.</returns>
-        public static T DeserializeData<T>(string filePath)
+        public static T DeserializeData<T>(string fileName)
         {
-            string jsonString = File.ReadAllText(filePath);
+            string jsonString = File.ReadAllText(fileName);
             T jsonTraslated = JsonSerializer.Deserialize<T>(jsonString, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
             return jsonTraslated;
+        }
+
+        public static void SerializeData<T>(T data, string fileName)
+        {
+            string jsonString = JsonSerializer.Serialize<T>(data);
+            File.WriteAllText(fileName, jsonString);
         }
     }
 }
