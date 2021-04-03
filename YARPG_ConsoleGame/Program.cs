@@ -7,17 +7,18 @@ namespace YARPG_ConsoleGame
 {
     class Program
     {
-        static string saveDataPath = "../../../save.json";
-
         static void Main(string[] args)
         {
+            SaveData saveData;
             Hero h = null;
+
             bool newGame = true;
-            
+
             // Checks the existance of a save data file and loads it if it's the case
-            if (File.Exists(saveDataPath))
+            if (File.Exists(DataPathService.SaveFile))
             {
-                h = LoadHero();
+                saveData = LocalDataService.LoadGameData();
+                h = saveData.Hero;
                 newGame = false;
             }
             
@@ -40,27 +41,18 @@ namespace YARPG_ConsoleGame
             }
 
             // Game set up
-            GameManager game = new GameManager();
-            game.InitializeHero(h);
-            game.SetIOManager(new ConsoleManager(game));
+            GameManager game = new GameManager(h, new ConsoleManager(null));
             SkillService.Initialize();
 
-            // Gameplay
+            // Gameplay start
             game.Encounter();
 
-            // Save test
-            SaveHero(h);
-        }
-
-        static Hero LoadHero()
-        {
-            Hero h = JsonService.DeserializeData<Hero>(saveDataPath);
-            return h;
-        }
-
-        static void SaveHero(Hero h)
-        {
-            JsonService.SerializeData<Hero>(h, saveDataPath);
+            // Saves the game localy
+            saveData = new SaveData()
+            {
+                Hero = h
+            };
+            LocalDataService.SaveGameData(saveData);
         }
     }
 }

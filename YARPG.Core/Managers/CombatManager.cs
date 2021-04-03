@@ -10,17 +10,17 @@ namespace YARPG.Core
         /// <summary>
         /// Hero instance in the combat.
         /// </summary>
-        public Hero Hero { get; protected set; }
+        public Hero Hero { get; set; }
 
         /// <summary>
         /// Enemy instance in the combat.
         /// </summary>
-        public Enemy Enemy { get; protected set; }
+        public Enemy Enemy { get; set; }
 
         /// <summary>
         /// Input/Output manager used during combat.
         /// </summary>
-        public IOManager IOManager { get; protected set; }
+        public IOManager IOManager { get; set; }
 
         // Local field needed for random actions generation
         private Random _random;

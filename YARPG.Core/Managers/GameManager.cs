@@ -10,7 +10,7 @@ namespace YARPG.Core
         /// <summary>
         /// Hero instance associated to the game.
         /// </summary>
-        public Hero Hero { get; protected set; }
+        public Hero Hero { get; set; }
 
         /// <summary>
         /// Manager used to have IO interactions with the environment.
@@ -25,11 +25,17 @@ namespace YARPG.Core
         /// <summary>
         /// Default constructor for this class.
         /// </summary>
-        public GameManager()
+        public GameManager(Hero hero, IOManager ioMan)
         {
-            CombatManager = new CombatManager();
+            Hero = hero;
+            IOManager = ioMan;
+            CombatManager = new CombatManager()
+            {
+                IOManager = ioMan
+            };
         }
 
+        /*
         /// <summary>
         /// Sets the Hero instance associated to the game.
         /// </summary>
@@ -54,6 +60,7 @@ namespace YARPG.Core
 
             return this;
         }
+        */
 
         /// <summary>
         /// Generates a new combat event and starts it.
